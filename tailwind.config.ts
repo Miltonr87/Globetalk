@@ -1,7 +1,8 @@
 import type { Config } from 'tailwindcss';
+import { nextui } from "@nextui-org/react";
 
 const config: Config = {
-    content: ['./src/**/*.{js,ts,jsx,tsx}'],
+    content: ['./src/**/*.{js,ts,jsx,tsx}', "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}"],
     theme: {
         extend: {
             fontFamily: {
@@ -9,11 +10,12 @@ const config: Config = {
                 mono: ['var(--font-geist-mono)', 'ui-monospace', 'SFMono-Regular'],
             },
             colors: {
-                primary: '#1E40AF', // Custom primary color
-                secondary: '#F59E0B', // Custom secondary color
+                primary: '#1E40AF',
+                secondary: '#F59E0B',
             },
         },
     },
-    plugins: [],
+    darkMode: 'class',
+    plugins: [nextui()],
 };
 export default config;
